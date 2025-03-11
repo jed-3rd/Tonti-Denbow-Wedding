@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+
+// components
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+
+// data
+import siteData from "@config/siteData.json";
+
+const today = new Date();
+---
+
+<footer class="bg-base-100/40 mt-12 flex flex-col items-center justify-center py-8">
+	<div class="site-container">
+		<!-- lets connect -->
+		<div class="description mx-auto mt-6 max-w-[21rem] px-4 text-center">
+			<h3>THE WEDDING OF</h3>
+			<h2>OLIVIA TONTI & JAMES DENBOW</h2>
+
+			<!-- copyright -->
+			<div class="mt-4 mb-2 text-center text-sm opacity-80">
+				&copy; {today.getFullYear()} Jed Denbow. All rights reserved.
+			</div>
+		</div>
+	</div>
+</footer>

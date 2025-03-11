@@ -1,0 +1,46 @@
+---
+export const prerender = false;
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// components
+import Button from "@components/Button/Button.astro";
+import Footer from "@components/Footer/Footer.astro";
+
+// data
+import siteData from "@config/siteData.json";
+import rsvpData from "@config/guestData.json";
+
+let guestIndex = null;
+
+if (Astro.request.method === "POST") {
+	try {
+		const data = await Astro.request.formData();
+		const submittedName = data.get("pwd-name");
+		rsvpData.forEach((ticket, index) => {
+			ticket.guestList.forEach((guest) => {
+				if (guest.guestName == submittedName) {
+					guestIndex = index;
+				}
+			});
+		});
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+	}
+}
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStartStyle="default">
+	<section class="mx-auto max-w-3xl px-4 pt-24 md:pt-36" style="min-height: 90vh">
+		<div
+			class="text-base-content markdown-content mt-8 max-w-none text-sm md:mt-12 md:px-8 md:text-base"
+		>
+			<h1>RSVP</h1>
+			<p>RSVPs will open on 3/12/25.</p>
+		</div>
+	</section>
+	<Footer />
+</BaseLayout>

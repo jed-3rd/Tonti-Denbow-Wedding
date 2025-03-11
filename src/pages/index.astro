@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// components
+import Hero from "@components/Hero/Hero.astro";
+import Button from "@components/Button/Button.astro";
+
+// data
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStartStyle="default">
+	<Hero />
+</BaseLayout>
