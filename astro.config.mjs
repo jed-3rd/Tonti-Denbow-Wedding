@@ -47,7 +47,6 @@ export default defineConfig({
 			SVG: false, // astro-icon handles this
 		}),
 	],
-	config: pnpm(),
 	vite: {
 		plugins: [tailwindcss()],
 		// stop inlining short scripts to fix issues with ClientRouter: https://github.com/withastro/astro/issues/12804
