@@ -6,6 +6,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 import AutoImport from "astro-auto-import";
+ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -56,4 +57,5 @@ export default defineConfig({
 	},
 
 	adapter: netlify(),
+	output: 'server',
 });
