@@ -2,7 +2,6 @@
 	"name": "horizon",
 	"type": "module",
 	"version": "2.0.0",
-	"packageManager": "pnpm@8",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -13,7 +12,6 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.8",
-		"@astrojs/netlify": "^6.2.3",
 		"@astrojs/rss": "^4.0.11",
 		"@astrojs/sitemap": "^3.2.1",
 		"@fontsource-variable/playfair-display": "^5.1.0",
