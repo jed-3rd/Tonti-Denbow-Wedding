@@ -11,26 +11,6 @@ import Footer from "@components/Footer/Footer.astro";
 // data
 import siteData from "@config/siteData.json";
 import rsvpData from "@config/guestData.json";
-
-let guestIndex = null;
-
-if (Astro.request.method === "POST") {
-	try {
-		const data = await Astro.request.formData();
-		const submittedName = data.get("pwd-name");
-		rsvpData.forEach((ticket, index) => {
-			ticket.guestList.forEach((guest) => {
-				if (guest.guestName == submittedName) {
-					guestIndex = index;
-				}
-			});
-		});
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error.message);
-		}
-	}
-}
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="default">
