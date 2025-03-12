@@ -58,4 +58,7 @@ export default defineConfig({
 
 	adapter: netlify(),
 	output: 'static',
+	image: {
+	   service: passthroughImageService(),
+	 },
 });
